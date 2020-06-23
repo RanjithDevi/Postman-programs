@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "58393ea3-8ef0-4191-b94d-203d2e1dd5b4",
+		"name": "UIPath",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CreateLogin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bBT8PB06hctOelmdfULgGVZUNOH4wBmDPrCBv103Hr4mbpSd7DIhmz6LVrzaQE4",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n\r\n{\r\n    \"username\": \"Ranji\", \r\n    \"password\": \"Babu_S*$*\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://uibank-api.azurewebsites.net/api/users/login",
+					"protocol": "https",
+					"host": [
+						"uibank-api",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RegisterUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "PADjVFYToDngeEmMT3QKISaPG70XVNqWMBKk7j33D8ICKR9x92IHKbhLbTu23Yw2",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"firstName\": \"Ranjith\",\r\n   \"title\": \"mrs\",\r\n    \"lastName\": \"Devi\", \r\n   \"gender\": \"female\",\r\n   \"employmentStatus\": \"Unemployed\",\r\n   \"age\": \"05/28/82\",\r\n    \"maritalStatus\": \"Married\",\r\n    \"numberOfDependents\": 3,\r\n    \"username\": \"Ranju\",\r\n     \"email\": \"ranjubabu@gmail.com\",\r\n    \"password\": \"Babu_S*$*\",\r\n    \"type\": \"customer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://uibank-api.azurewebsites.net/api/users/",
+					"protocol": "https",
+					"host": [
+						"uibank-api",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAccountDetails",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "PADjVFYToDngeEmMT3QKISaPG70XVNqWMBKk7j33D8ICKR9x92IHKbhLbTu23Yw2"
+					}
+				],
+				"url": {
+					"raw": "https://uibank-api.azurewebsites.net/api/accounts?filter[where][userId]=5ef09984e29f950044ba312d",
+					"protocol": "https",
+					"host": [
+						"uibank-api",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"accounts"
+					],
+					"query": [
+						{
+							"key": "filter[where][userId]",
+							"value": "5ef09984e29f950044ba312d"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ApplyLoan",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "PADjVFYToDngeEmMT3QKISaPG70XVNqWMBKk7j33D8ICKR9x92IHKbhLbTu23Yw2",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"oviyaa10babu@gmail.com\",\r\n    \"amount\": 30000,\r\n    \"term\": 1,\r\n     \"income\": 40000,\r\n     \"age\": 37\r\n     }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://uibank-api.azurewebsites.net/api/quotes/newquote",
+					"protocol": "https",
+					"host": [
+						"uibank-api",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"quotes",
+						"newquote"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoanStatus",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "PADjVFYToDngeEmMT3QKISaPG70XVNqWMBKk7j33D8ICKR9x92IHKbhLbTu23Yw2"
+					}
+				],
+				"url": {
+					"raw": "https://uibank-api.azurewebsites.net/api/quotes/5ef0db9fa1314a0056fd6197",
+					"protocol": "https",
+					"host": [
+						"uibank-api",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"quotes",
+						"5ef0db9fa1314a0056fd6197"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "93423fd3-032f-416f-9de1-ea2197f9d148",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "0f136783-28c4-4b3e-8e34-5a29abade1f7",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
