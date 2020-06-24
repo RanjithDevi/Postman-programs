@@ -1,0 +1,265 @@
+{
+	"info": {
+		"_postman_id": "b0595fe9-7d69-419d-b9ea-2b20b4f32161",
+		"name": "TomTom",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "RegisterKey",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"secret\": \"secret_key\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.tomtom.com/geofencing/1/register?key=RdsirXiugBO5E70tHLdKvu0fDa0jjMo9",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tomtom",
+						"com"
+					],
+					"path": [
+						"geofencing",
+						"1",
+						"register"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "RdsirXiugBO5E70tHLdKvu0fDa0jjMo9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddNewProject",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"name\": \"Ranji Project\"\r\n }'",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.tomtom.com/geofencing/1/projects/project?key=RdsirXiugBO5E70tHLdKvu0fDa0jjMo9&adminKey=sZGoYsbza5DI5j1O1XH4G06UXMMj38mqMx6p3NULKzxk0G82",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tomtom",
+						"com"
+					],
+					"path": [
+						"geofencing",
+						"1",
+						"projects",
+						"project"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "RdsirXiugBO5E70tHLdKvu0fDa0jjMo9"
+						},
+						{
+							"key": "adminKey",
+							"value": "sZGoYsbza5DI5j1O1XH4G06UXMMj38mqMx6p3NULKzxk0G82"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListProjects",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.tomtom.com/geofencing/1/projects?key=RdsirXiugBO5E70tHLdKvu0fDa0jjMo9",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tomtom",
+						"com"
+					],
+					"path": [
+						"geofencing",
+						"1",
+						"projects"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "RdsirXiugBO5E70tHLdKvu0fDa0jjMo9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RegenerateAdminKey",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"secret\": \"secret_key\"\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.tomtom.com/geofencing/1/regenerateKey?key=RdsirXiugBO5E70tHLdKvu0fDa0jjMo9",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tomtom",
+						"com"
+					],
+					"path": [
+						"geofencing",
+						"1",
+						"regenerateKey"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "RdsirXiugBO5E70tHLdKvu0fDa0jjMo9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddNewFence",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Circle Fence\",\r\n  \"type\": \"Feature\",\r\n  \"geometry\": {\r\n    \"radius\": 75,\r\n    \"type\": \"Point\",\r\n    \"shapeType\": \"Circle\",\r\n    \"coordinates\": [-67.137343, 45.137451]\r\n  },\r\n  \"properties\": {\r\n    \"maxSpeedKmh\": 70\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.tomtom.com/geofencing/1/projects/abbe322b-3313-40af-85d0-f631ec8415ac/fence?key=RdsirXiugBO5E70tHLdKvu0fDa0jjMo9&adminKey=GEivgsoRzTQ07jfQE7dPOOLdpaljUWlSqMNFr7NgSl6eLgWA",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tomtom",
+						"com"
+					],
+					"path": [
+						"geofencing",
+						"1",
+						"projects",
+						"abbe322b-3313-40af-85d0-f631ec8415ac",
+						"fence"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "RdsirXiugBO5E70tHLdKvu0fDa0jjMo9"
+						},
+						{
+							"key": "adminKey",
+							"value": "GEivgsoRzTQ07jfQE7dPOOLdpaljUWlSqMNFr7NgSl6eLgWA"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CheckFenceTransitions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.tomtom.com/geofencing/1/transitions/fences/425b3712-f899-4855-9837-d138c29d04b3?key=RdsirXiugBO5E70tHLdKvu0fDa0jjMo9&from=2020-06-24T01:00:00&to=2020-06-24T23:00:00&maxResults=70&pageNumber=5",
+					"protocol": "https",
+					"host": [
+						"api",
+						"tomtom",
+						"com"
+					],
+					"path": [
+						"geofencing",
+						"1",
+						"transitions",
+						"fences",
+						"425b3712-f899-4855-9837-d138c29d04b3"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "RdsirXiugBO5E70tHLdKvu0fDa0jjMo9"
+						},
+						{
+							"key": "from",
+							"value": "2020-06-24T01:00:00"
+						},
+						{
+							"key": "to",
+							"value": "2020-06-24T23:00:00"
+						},
+						{
+							"key": "maxResults",
+							"value": "70"
+						},
+						{
+							"key": "pageNumber",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "af210eff-0d93-409a-82b2-dc164867d681",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "4140b788-b864-4500-b902-b9e291e5beff",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
