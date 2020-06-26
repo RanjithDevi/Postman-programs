@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "296e6536-68d4-4454-8e6e-2c7ef187d0af",
+		"name": "BestBuy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ProductDetails",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9fdc5c59-91de-49cc-9c24-4c93f8fc4ad1",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.bestbuy.com/v1/stores(postalCode=55423)?format=json&show=storeId,storeType,name,city,region,distance&apiKey=qUh3qMK14GdwAs9bO59QRSCJ",
+					"protocol": "https",
+					"host": [
+						"api",
+						"bestbuy",
+						"com"
+					],
+					"path": [
+						"v1",
+						"stores(postalCode=55423)"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "show",
+							"value": "storeId,storeType,name,city,region,distance"
+						},
+						{
+							"key": "apiKey",
+							"value": "qUh3qMK14GdwAs9bO59QRSCJ"
+						},
+						{
+							"key": "distance",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Storename near postal code 02864",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.bestbuy.com/v1/stores(area(02864,10))?format=json&show=storeId,storeType,name,distance,address&pageSize=1&apiKey=qUh3qMK14GdwAs9bO59QRSCJ",
+					"protocol": "https",
+					"host": [
+						"api",
+						"bestbuy",
+						"com"
+					],
+					"path": [
+						"v1",
+						"stores(area(02864,10))"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "show",
+							"value": "storeId,storeType,name,distance,address"
+						},
+						{
+							"key": "pageSize",
+							"value": "1"
+						},
+						{
+							"key": "apiKey",
+							"value": "qUh3qMK14GdwAs9bO59QRSCJ"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "canonproductswithinpricerange",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.bestbuy.com/v1/products(manufacturer=canon & salePrice<1500 & salePrice >1000)?format=json&show=sku,name,salePrice&apiKey=qUh3qMK14GdwAs9bO59QRSCJ",
+					"protocol": "https",
+					"host": [
+						"api",
+						"bestbuy",
+						"com"
+					],
+					"path": [
+						"v1",
+						"products(manufacturer=canon & salePrice<1500 & salePrice >1000)"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "show",
+							"value": "sku,name,salePrice"
+						},
+						{
+							"key": "apiKey",
+							"value": "qUh3qMK14GdwAs9bO59QRSCJ"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findsalePriceRegularPrice",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.bestbuy.com/v1/products(manufacturer=apple& search=mobile)?format=json&show=name,regularPrice,salePrice&apiKey=qUh3qMK14GdwAs9bO59QRSCJ",
+					"protocol": "https",
+					"host": [
+						"api",
+						"bestbuy",
+						"com"
+					],
+					"path": [
+						"v1",
+						"products(manufacturer=apple& search=mobile)"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "show",
+							"value": "name,regularPrice,salePrice"
+						},
+						{
+							"key": "apiKey",
+							"value": "qUh3qMK14GdwAs9bO59QRSCJ"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "StorepickupinRIRegion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.bestbuy.com/v1/products(manufacturer=apple& search=mobile & inStorePickup=true)+stores(region=RI)?format=json&show=sku,name,stores.storeId,stores.name,stores.address&apiKey=qUh3qMK14GdwAs9bO59QRSCJ",
+					"protocol": "https",
+					"host": [
+						"api",
+						"bestbuy",
+						"com"
+					],
+					"path": [
+						"v1",
+						"products(manufacturer=apple& search=mobile & inStorePickup=true)+stores(region=RI)"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						},
+						{
+							"key": "show",
+							"value": "sku,name,stores.storeId,stores.name,stores.address"
+						},
+						{
+							"key": "stores",
+							"value": "region=RI",
+							"disabled": true
+						},
+						{
+							"key": "apiKey",
+							"value": "qUh3qMK14GdwAs9bO59QRSCJ"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "01734366-2f76-4594-9a73-d3b01518e362",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "3f64cb1a-4e3c-4253-8854-e1a337e3f3b5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
